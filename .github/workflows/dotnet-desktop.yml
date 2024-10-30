@@ -1,4 +1,4 @@
-name: SauceDemo_Daily_Run
+name: OrangeHRM_Daily_Run
 
 on:
   schedule:
@@ -12,14 +12,6 @@ jobs:
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4
-
-      - name: Cache NuGet packages
-        uses: actions/cache@v4
-        with:
-          path: ~/.nuget/packages
-          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
-          restore-keys: |
-            ${{ runner.os }}-nuget-
 
       - name: Set up .NET
         uses: actions/setup-dotnet@v4
