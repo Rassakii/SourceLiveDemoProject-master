@@ -17,6 +17,8 @@ namespace SourceLiveDemoProject.Configuration
 
         public static string BrowserName => GetConfigurationValue("Browser");
         public static string Url => GetConfigurationValue("BaseUrl");
+        public static string MobileDeviceName => GetConfigurationValue("Mobile Device Name");
+        public static bool Headless => bool.Parse(GetConfigurationValue("Headless"));
 
         static string GetConfigurationValue(string key)
         {

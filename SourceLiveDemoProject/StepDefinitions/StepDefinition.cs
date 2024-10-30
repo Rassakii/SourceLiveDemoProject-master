@@ -2,7 +2,7 @@ using SourceLiveDemoProject.Model;
 using SourceLiveDemoProject.Pages;
 using TechTalk.SpecFlow;
 
-namespace SourceLiveDemoProject.Configuration.StepDefinitions
+namespace SourceLiveDemoProject.StepDefinitions
 {
     [Binding]
     public class StepDefinition
