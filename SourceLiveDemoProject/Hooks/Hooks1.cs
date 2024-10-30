@@ -6,6 +6,7 @@ using SourceLiveDemoProject.Configuration;
 using SourceLiveDemoProject.Utilities;
 using TechTalk.SpecFlow;
 
+[assembly: Parallelizable(ParallelScope.Fixtures)]
 namespace SourceLiveDemoProject.Hooks
 {
     [Binding]

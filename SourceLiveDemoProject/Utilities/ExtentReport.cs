@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using BoDi;
 using OpenQA.Selenium;
 using TechTalk.SpecFlow;
 
@@ -7,7 +6,6 @@ namespace SourceLiveDemoProject.Utilities
 {
     public class ExtentReport
     {
-        private readonly IObjectContainer _objectContainer;
         public static ExtentReports extent;
         public static ExtentTest _feature;
         public static ExtentTest _scenario;
@@ -33,10 +31,7 @@ namespace SourceLiveDemoProject.Utilities
         }
         public static void ExtentReportTearDown()
         {
-
             extent.Flush();
-
-
         }
         public string AddScreenshot(IWebDriver driver, ScenarioContext scenariocontext)
         {
