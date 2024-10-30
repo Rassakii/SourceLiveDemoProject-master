@@ -21,9 +21,6 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Set execute permissions for msedgedriver
-        run: chmod +x ~/.nuget/packages/selenium.webdriver.msedgedriver/**/driver/linux64/msedgedriver
-
       - name: Build the project
         run: dotnet build --configuration Release
 
