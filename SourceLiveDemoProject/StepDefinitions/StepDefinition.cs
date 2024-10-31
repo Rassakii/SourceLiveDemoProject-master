@@ -43,9 +43,8 @@ namespace SourceLiveDemoProject.StepDefinitions
         {
             Assert.IsTrue(_productPage.IsBagpackDisplayed());
             Assert.IsTrue(_productPage.IsBikeLightDisplayed());
+            StringAssert.Contains("Products", _productPage.GetProductLabelText());
 
-            //why is this? are you trying to assert?
-            _productPage.IsProductlabelDisplayed();
         }
 
         [When(@"User sorts product by price")]
@@ -127,7 +126,7 @@ namespace SourceLiveDemoProject.StepDefinitions
         {
             Assert.IsTrue(_productPage.IsBagpackDisplayed());
             Assert.IsTrue(_productPage.IsBikeLightDisplayed());
-            _productPage.IsProductlabelDisplayed();
+            StringAssert.Contains("Products", _productPage.GetProductLabelText());
         }
     }
 }

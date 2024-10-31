@@ -28,10 +28,9 @@ namespace SourceLiveDemoProject.Pages
         {
             return BikeLightPicture.Displayed;
         }
-        public void IsProductlabelDisplayed()
+        public string GetProductLabelText()
         {
-            string productlabel = ProductLabel.Text;
-            StringAssert.Contains("Products", productlabel);
+            return ProductLabel.Text;
         }
         public void AddProductToCart(UserProfile user)
         {
