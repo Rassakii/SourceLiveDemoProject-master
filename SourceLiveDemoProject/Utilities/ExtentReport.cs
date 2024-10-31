@@ -25,9 +25,6 @@ namespace SourceLiveDemoProject.Utilities
 
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
-            extent.AddSystemInfo("Application", "Orange");
-            extent.AddSystemInfo("Browser", "Edge");
-            extent.AddSystemInfo("OS", "Windows");
         }
         public static void ExtentReportTearDown()
         {

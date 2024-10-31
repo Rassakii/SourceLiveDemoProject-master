@@ -1,6 +1,5 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
-using BoDi;
 using OpenQA.Selenium;
 using SourceLiveDemoProject.Configuration;
 using SourceLiveDemoProject.Utilities;
@@ -12,9 +11,6 @@ namespace SourceLiveDemoProject.Hooks
     [Binding]
     internal class Hook : ExtentReport
     {
-
-
-        private readonly IObjectContainer _objectContainer;
         public IWebDriver _driver;
 
         WebDriverSupport _webDriverSupport;
