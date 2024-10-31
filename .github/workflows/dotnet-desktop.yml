@@ -1,4 +1,4 @@
-name: OrangeHRM_Daily_Run
+name: SourceDemo_Daily_Run
 
 on:
   schedule:
