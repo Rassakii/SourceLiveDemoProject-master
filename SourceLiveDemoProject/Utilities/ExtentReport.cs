@@ -1,5 +1,6 @@
 ﻿using AventStack.ExtentReports;
 using OpenQA.Selenium;
+using SourceLiveDemoProject.Configuration;
 using TechTalk.SpecFlow;
 
 namespace SourceLiveDemoProject.Utilities
@@ -21,7 +22,10 @@ namespace SourceLiveDemoProject.Utilities
             if (!Directory.Exists(testResultPath))
                 Directory.CreateDirectory(testResultPath);
 
-            var htmlReporter = new AventStack.ExtentReports.Reporter.ExtentHtmlReporter(testResultPath);
+            string reportFileName = $"AutomationStatusReport_{ConfigurationManager.BrowserName}_{DateTime.Now:yyyy_MM_dd_HH_mm_ss}.html";
+            string fullReportPath = Path.Combine(testResultPath, reportFileName);
+
+            var htmlReporter = new AventStack.ExtentReports.Reporter.ExtentHtmlReporter(fullReportPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.DocumentTitle = "Automation Status Report";
             htmlReporter.Config.Theme = AventStack.ExtentReports.Reporter.Configuration.Theme.Standard;
