@@ -47,7 +47,6 @@ namespace SourceLiveDemoProject.Hooks
         [BeforeScenario]
         public void BeforeScenario(ScenarioContext scenariocontext)
         {
-
             _webDriverSupport.InitializeBrowser(ConfigurationManager.BrowserName);
             _scenario = _feature.CreateNode<Scenario>(scenariocontext.ScenarioInfo.Title);
         }
@@ -62,8 +61,6 @@ namespace SourceLiveDemoProject.Hooks
             Console.WriteLine("Running after step....");
             string stepType = scenarioContext.StepContext.StepInfo.StepDefinitionType.ToString();
             string stepName = scenarioContext.StepContext.StepInfo.Text;
-
-
 
             //When scenario passed
             if (scenarioContext.TestError == null)
@@ -89,7 +86,6 @@ namespace SourceLiveDemoProject.Hooks
 
             if (scenarioContext.TestError != null)
             {
-
                 if (stepType == "Given")
                 {
                     _scenario.CreateNode<Given>(stepName).Fail(scenarioContext.TestError.Message,
