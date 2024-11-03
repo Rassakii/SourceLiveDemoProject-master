@@ -15,7 +15,6 @@ namespace SourceLiveDemoProject.Utilities
         public WebDriverSupport(IObjectContainer objectContainer)
         {
             _objectContainer = objectContainer;
-
         }
 
         public void InitializeBrowser(string browserName)

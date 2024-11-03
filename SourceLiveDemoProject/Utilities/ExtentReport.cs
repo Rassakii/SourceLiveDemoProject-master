@@ -7,14 +7,20 @@ namespace SourceLiveDemoProject.Utilities
     public class ExtentReport
     {
         public static ExtentReports extent;
+        [ThreadStatic]
         public static ExtentTest _feature;
+        [ThreadStatic]
         public static ExtentTest _scenario;
 
-        public static String dir = AppDomain.CurrentDomain.BaseDirectory;
-        public static String testResultPath = dir.Replace("bin\\Debug\\net8.0", "TestResults");
+        //public static String dir = AppDomain.CurrentDomain.BaseDirectory;
+        //public static String testResultPath = dir.Replace("bin\\Debug\\net8.0", "TestResults");
+        public static String testResultPath = @"TestResults";
 
         public static void ExtentReportInit()
         {
+            if (!Directory.Exists(testResultPath))
+                Directory.CreateDirectory(testResultPath);
+
             var htmlReporter = new AventStack.ExtentReports.Reporter.ExtentHtmlReporter(testResultPath);
             htmlReporter.Config.ReportName = "Automation Status Report";
             htmlReporter.Config.DocumentTitle = "Automation Status Report";
@@ -24,6 +30,7 @@ namespace SourceLiveDemoProject.Utilities
             extent = new ExtentReports();
             extent.AttachReporter(htmlReporter);
         }
+
         public static void ExtentReportTearDown()
         {
             extent.Flush();
@@ -38,4 +45,3 @@ namespace SourceLiveDemoProject.Utilities
         }
     }
 }
-

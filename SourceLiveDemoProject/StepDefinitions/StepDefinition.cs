@@ -64,7 +64,7 @@ namespace SourceLiveDemoProject.StepDefinitions
         public void ThenSignedoutSuccesfully()
         {
             Assert.IsTrue(_logInPage.IsLoginButtonDisplayed());
-            Assert.IsTrue(_logInPage.IsRobotImageDisplayed());
+            Assert.IsFalse(_logInPage.IsRobotImageDisplayed());
         }
 
         [When(@"User Removes the product in the cart")]
